@@ -7,6 +7,7 @@ pipeline {
                   echo 'Build............................................'
                   sh 'npm --version'
                   echo 'now running test cases............................'
+                  npm install
                   sh ./script/test
                }
             }
