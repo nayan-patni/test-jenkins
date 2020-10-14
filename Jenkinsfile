@@ -7,10 +7,7 @@ pipeline {
                   echo 'Build............................................'
                   sh 'npm --version'
                   echo 'now running test cases............................'
-                  npm install
-                  echo 'npm install complete............................'
-
-                  sh ./script/test
+                  sh './script/test'
                }
             }
         }
