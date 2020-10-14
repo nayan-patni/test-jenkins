@@ -7,8 +7,7 @@ pipeline {
                   echo 'Build............................................'
                   sh 'npm --version'
                   echo 'now running test cases............................'
-                  ./script/test.sh
-
+                  './script/test'.sh
                }
             }
         }
