@@ -12,6 +12,7 @@ pipeline {
                   sh 'npm --version'
                   echo 'now running test cases............................'
                   sh './script/test'
+                  echo 'test case execution done..........................'
                }
             }
         }
