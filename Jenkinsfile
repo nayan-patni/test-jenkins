@@ -1,5 +1,8 @@
 pipeline {
-    agent { docker { image 'node:6.3' } }
+    agent { docker { image 'node:8.12.0' } }
+    environment {
+        HOME = '.'
+    }
     tools {nodejs "node"}
     stages {
         stage('build') {
