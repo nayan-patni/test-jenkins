@@ -8,6 +8,8 @@ pipeline {
                   sh 'npm --version'
                   echo 'now running test cases............................'
                   npm install
+                  echo 'npm install complete............................'
+
                   sh ./script/test
                }
             }
