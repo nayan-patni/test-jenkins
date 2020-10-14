@@ -4,11 +4,10 @@ pipeline {
         stage('build') {
             steps {
                script{
-
                   echo 'Build............................................'
                   sh 'npm --version'
                   echo 'now running test cases............................'
-                  ./script/test
+                  ./script/test.sh
 
                }
             }
