@@ -5,6 +5,8 @@ pipeline {
             steps {
                 echo 'Build............................................'
                 sh 'npm --version'
+                echo 'now running test cases............................'
+                ./script/test
             }
         }
     }
