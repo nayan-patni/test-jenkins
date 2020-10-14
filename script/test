@@ -1,4 +1,3 @@
 #!/bin/sh
-npm install --save-dev babel-cli babel-preset-env babel-preset-stage-0
-npm install
+git npm install
 ./node_modules/.bin/mocha ./test/test.js
