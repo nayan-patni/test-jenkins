@@ -1,4 +1,3 @@
 #!/bin/sh
-echo "This is a test."
-# Terminate our shell script with success message
-exit 0
+npm install
+./node_modules/.bin/mocha ./test/test.js
