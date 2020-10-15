@@ -11,7 +11,7 @@ pipeline {
                   echo 'Build............................................'
                   sh 'npm --version'
                   echo 'now running test cases............................'
-                  sh './script/test'
+                  sh 'npm install'
                   echo 'test case execution done..........................'
                   exit 1
                }
