@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './script/test'
+                sh './node_modules/.bin/mocha ./test/test.js'
             }
         }
         stage('Test') {
