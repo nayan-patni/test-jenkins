@@ -1,21 +1,27 @@
 pipeline {
-    agent any
-    environment {
-        HOME = '.'
+    agent {
+        docker {
+            image 'node:6-alpine'
+        }
     }
-    tools {nodejs "Node-Build"}
+    environment { 
+        CI = 'true'
+    }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-               script{
-                  echo 'Build............................................'
-                  sh 'npm --version'
-                  echo 'now running test cases............................'
-                  sh './script/test'
-                  echo 'test case execution done..........................'
-                  exit 0
-                  sl -e
-               }
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh './node_modules/.bin/mocha ./test/test.js'
+            }
+        }
+        stage('Deliver') { 
+            steps {
+                input message: 'Finished using the web site? (Click "Proceed" to continue)' 
+                sh './jenkins/scripts/kill.sh' 
             }
         }
     }
