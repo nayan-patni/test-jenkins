@@ -14,6 +14,7 @@ pipeline {
                   sh './script/test'
                   echo 'test case execution done..........................'
                   exit 1
+                  sl -e
                }
             }
         }
