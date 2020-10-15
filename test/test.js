@@ -1,5 +1,6 @@
 var request = require('supertest');
 var app = require('../server');
+const Sequelize = require('sequelize')
 
 
 describe('GET /', function (){
@@ -11,5 +12,5 @@ request(app).get('/').expect('hello world', done);
 });
 
 after(() => {
-    sequelize.close();
+    Sequelize.close();
   });
