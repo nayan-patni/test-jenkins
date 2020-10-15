@@ -9,3 +9,7 @@ it('respond with hello world', function(done){
 request(app).get('/').expect('hello world', done);
 });
 });
+
+after(() => {
+    sequelize.close();
+  });
