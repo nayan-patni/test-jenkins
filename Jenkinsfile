@@ -4,12 +4,17 @@ pipeline {
         HOME = '.'
     }
     tools {nodejs "Node-Build"}
-stage('Building') {
-   def result = sh returnStatus: true, script: './script/test.sh'
-}
-if (result != 0) {
-  echo '[FAILURE] Failed to build'
-  currentBuild.result = 'FAILURE'
-  return
-}
+    stages {
+        stage('build') {
+            steps {
+               script{
+                  echo 'Build............................................'
+                  sh 'npm --version'
+                  echo 'now running test cases............................'
+                  sh './script/test'
+                  echo 'test case execution done..........................'
+               }
+            }
+        }
+    }
 }
