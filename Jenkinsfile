@@ -14,6 +14,8 @@ pipeline {
                   sh 'npm install'
                   sh './node_modules/.bin/mocha ./test/test.js'
                   echo 'test case execution done..........................'
+                  set -x
+                  kill $(cat .pidfile)
                }
             }
         }
