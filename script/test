@@ -1,4 +1,4 @@
 #!/bin/sh
 npm install
 ./node_modules/.bin/mocha ./test/test.js
-exit
+exit Ng
