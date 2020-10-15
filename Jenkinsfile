@@ -12,6 +12,7 @@ pipeline {
                   sh 'npm --version'
                   echo 'now running test cases............................'
                   sh 'npm install'
+                  sh './node_modules/.bin/mocha ./test/test.js'
                   echo 'test case execution done..........................'
                }
             }
