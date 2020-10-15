@@ -13,7 +13,7 @@ pipeline {
                   echo 'now running test cases............................'
                   sh 'npm install'
                   echo 'test case execution done..........................'
-                  exit 1
+                  exit 0
                }
             }
         }
